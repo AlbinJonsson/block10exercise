@@ -1,17 +1,26 @@
 package oopd_gu_chalmers.polygons.polygon;
 
 public class PolygonFactory {
-    // TODO: 1a: In order to minimize dependencies:
-    //  What arguments should these methods take?
-    //  What should their result types be?
-    //  Implement the methods, and let DrawPolygons use them.
-    // ... createTriangle ...
-    // ... createRectangle ...
-    // ... createSquare ...
+
+    public static Polygon createTriangle(int x, int y) {
+        return new Triangle(x, y);
+    }
+
+    public static Polygon createRectangle(int x, int y) {
+        return new Rectangle(x, y);
+    }
+
+    public static Polygon createSquare(int x, int y) {
+        return new Square(x, y);
+    }
 }
 // TODO: 1c: Why should this class reside inside the
 //  oopd_gu_chalmers.polygons.polygon subpackage, and not in
 //  oopd_gu_chalmers.polygons together with DrawPolygons?
+
+//✅ Keeps creation logic separate from usage logic.
+//✅ Follows Factory Pattern principles by decoupling object creation.
+//✅ Makes code easier to maintain and extend.
 
 // TODO: 1d: Draw a UML class diagram over the new
 //  structure for the package. What is the public
